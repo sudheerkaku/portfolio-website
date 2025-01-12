@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Website">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav role="navigation">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="#about" tabindex="0">About Me</a></li>
+                <li><a href="#projects" tabindex="0">Projects</a></li>
+                <li><a href="#skills" tabindex="0">Skills</a></li>
+                <li><a href="#contact" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>Hello! I'm a web developer with a passion for creating beautiful and functional websites.</p>
+            <img src="images/profile.jpg" alt="A picture of me" />
+        </section>
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">My Projects</h2>
+            <div class="filter-options">
+                <button onclick="filterProjects('all')">All</button>
+                <button onclick="filterProjects('category1')">Category 1</button>
+                <button onclick="filterProjects('category2')">Category 2</button>
+            </div>
+            <div class="projects-grid">
+                <article class="project" data-category="category1">
+                    <h3>Project 1</h3>
+                    <p>Description of project 1.</p>
+                    <img src="images/0f2b0592-ac66-4141-961a-14498dee1dcb.webp" alt="Screenshot of Project 1" onclick="openLightbox(this)" />
+                </article>
+                <article class="project" data-category="category2">
+                    <h3>Project 2</h3>
+                    <p>Description of project 2.</p>
+                    <img src="images/01d08448-6eed-4275-b21a-372440705ad6.webp" alt="Screenshot of Project 2" onclick="openLightbox(this)" />
+                </article>
+                <!-- Add more project articles as needed -->
+            </div>
+        </section>
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <span class="error" id="name-error"></span>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="email-error"></span>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <span class="error" id="message-error"></span>
+                <button type="submit">Send</button>
+                <p id="form-feedback"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Portfolio</p>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
